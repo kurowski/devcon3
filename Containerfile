@@ -4,6 +4,7 @@ FROM ubuntu:rolling
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && apt-get install -y \
     fd-find \
     git \
+    mkdocs-material \
     neovim \
     nodejs \
     npm \
