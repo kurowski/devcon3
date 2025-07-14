@@ -2,6 +2,7 @@ FROM ubuntu:rolling
 
 # Install essential tools and dependencies
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && apt-get install -y \
+    curl \
     fd-find \
     git \
     mkdocs-material \
