@@ -2,19 +2,25 @@ FROM ubuntu:rolling
 
 # Install essential tools and dependencies
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && apt-get install -y \
+    atuin \
+    bzip2 \
     curl \
     fd-find \
     git \
     mkdocs-material \
     neovim \
-    nodejs \
-    npm \
     ripgrep \
     starship \
     sudo \
     tmux \
     zsh
 #    && apt-get clean -y && rm -rf /var/lib/apt/lists/*
+
+# Install Node.js
+RUN curl -fsSL https://deb.nodesource.com/setup_22.x -o nodesource_setup.sh \
+    && bash nodesource_setup.sh \
+    && rm nodesource_setup.sh \
+    && apt-get install -y nodejs
 
 # Install global npm packages
 RUN npm install -g \
