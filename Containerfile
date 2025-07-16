@@ -9,6 +9,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && apt-get install -
     git \
     mkdocs-material \
     neovim \
+    postgresql-client \
     ripgrep \
     starship \
     sudo \
@@ -28,8 +29,6 @@ RUN npm install -g \
 #     nodemon \
 #     npm-check-updates
 
-# Expose default Expo port
-EXPOSE 8081
 
 RUN echo ubuntu ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/ubuntu \
     && chmod 0440 /etc/sudoers.d/ubuntu
